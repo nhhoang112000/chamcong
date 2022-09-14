@@ -1,0 +1,23 @@
+.navbar {
+    width: 300px;
+    height: calc(100vh - 94px);
+    background-color: #e5e5e5;
+    z-index: 0;
+    position: relative;
+    top: 0px;
+}
+
+.navItem {
+    width: 100%;
+    height: 84px;
+    padding: 10px 20px;
+    color: black;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.navItem:hover {
+    background-color: #ffffff;
+}

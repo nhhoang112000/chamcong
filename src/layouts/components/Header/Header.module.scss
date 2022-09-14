@@ -1,0 +1,64 @@
+.header {
+    width: 100%;
+    height: 94px;
+    background-color: #181818;
+    padding: 17px 20px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+}
+
+.logo {
+    width: 60px;
+    height: 61px;
+    background-image: url('https://www.lamborghini.com/sites/it-en/files/themes/custom/lambo_facelift_2019/images/logo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 52px;
+}
+
+.search-input {
+    margin-left: 10px;
+}
+
+.search-input input {
+    width: 400px;
+    height: 35px;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    padding: 0px 20px;
+    font-size: medium;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header-right {
+    position: absolute;
+    display: flex;
+    float: right;
+    right: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}
