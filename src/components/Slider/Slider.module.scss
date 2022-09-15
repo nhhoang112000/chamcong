@@ -1,18 +1,22 @@
-.slider {
-    width: 100%;
-    height: 500px;
-    background-color: #0077b6;
-    // background-color: transparent;
-    z-index: 0;
-    position: relative;
-    margin: 0 auto;
-    overflow: hidden;
-    white-space: nowrap;
-}
+// .slider {
+//     width: 100%;
+//     // background-color: transparent;
+//     z-index: 0;
+//     position: relative;
+//     margin: 0 auto;
+//     white-space: nowrap;
+//     flex-direction: row;
+// }
 
-.slide {
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+// .slide {
+//     position: relative;
+//     height: 100%;
+//     background-size: cover;
+//     background-position: center;
+//     background-repeat: no-repeat;
+// }
+
+.slick-track{
+    left: 0;
+    position: relative;
 }

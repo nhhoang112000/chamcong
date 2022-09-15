@@ -25,6 +25,9 @@ function SliderShow() {
         },
     ];
     var settings = {
+        arrows: false,
+        autoplay: false,
+        autoplaySpeed: 3000,
         dots: true,
         infinite: true,
         speed: 500,
@@ -33,9 +36,10 @@ function SliderShow() {
     };
     return (
         <div>
-            <Slider {...settings} className={cx('slider')}>
+            <h2>Custom Slides</h2>
+            <Slider {...settings}>
                 {slideImages.map((slideImage, index) => (
-                    <div key={index} className={cx('slide')}>
+                    <div key={index}>
                         <div style={{ backgroundImage: `url(${slideImage.url})` }}>
                             <span>{slideImage.caption}</span>
                         </div>

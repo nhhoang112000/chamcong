@@ -2,7 +2,7 @@ import config from '~/config';
 
 //page
 import Home from '~/pages/Home';
-import Model from '~/pages/Model';
+import Model from '~/pages/Model/Model';
 import Profile from '~/pages/Profile';
 import Cart from '~/pages/Cart';
 import Search from '~/pages/Search';
