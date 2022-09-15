@@ -1,7 +1,15 @@
+.wrapper {
+    font-size: 18px;
+}
+//filter
+
 .filter {
     height: 100px;
-    background-color: yellow;
+    background-color: #f8f8f7;
+
     display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .models {
@@ -10,4 +18,29 @@
 }
 
 .filter-model {
+    margin-left: 50px;
 }
+
+.filter-dropdown {
+    border-radius: 3px;
+    width: 200px;
+    height: 30px;
+}
+
+.filter-color {
+    margin-left: 50px;
+}
+.filter-price {
+    margin-left: 50px;
+}
+.filter-text {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.filter-input {
+    width: 250px;
+    height: 30px;
+    border-radius: 3px;
+}
+
+//model items

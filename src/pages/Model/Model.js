@@ -1,3 +1,4 @@
+import ModelItem from './ModelItem';
 import classNames from 'classnames/bind';
 import styles from './Model.module.scss';
 
@@ -5,11 +6,11 @@ const cx = classNames.bind(styles);
 
 function Model() {
     return (
-        <div>
+        <div className={cx('wrapper')}>
             <div className={cx('filter')}>
                 <div className={cx('filter-model')}>
-                    <label>Model</label>
-                    <select>
+                    <label className={cx('filter-text')}>Model</label>
+                    <select className={cx('filter-dropdown')}>
                         <option value="volvo">Volvo</option>
                         <option value="saab">Saab</option>
                         <option value="opel">Opel</option>
@@ -17,16 +18,51 @@ function Model() {
                     </select>
                 </div>
                 <div className={cx('filter-color')}>
-                    <label>Color</label>
-                    <select>
+                    <label className={cx('filter-text')}>Color</label>
+                    <select className={cx('filter-dropdown')}>
                         <option value="red">red</option>
                         <option value="green">green</option>
                         <option value="white">white</option>
                         <option value="black">black</option>
                     </select>
                 </div>
+                <div className={cx('filter-price')}>
+                    <label className={cx('filter-text')}>Price:</label>
+                    <input type={'number'} className={cx('filter-input')} />
+                    <label className={cx('filter-text')}>to</label>
+                    <input type={'number'} className={cx('filter-input')} />
+                </div>
             </div>
-            <div className={cx('models')}>models</div>
+            <div className={cx('models')}>
+                <ModelItem
+                    modelItemImg={
+                        'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/aventador/2021/09_21_restyle/gw_aven_07.jpg'
+                    }
+                    modelName={'name1'}
+                    modelPrice={69}
+                />
+                <ModelItem
+                    modelItemImg={
+                        'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/aventador/2021/09_21_restyle/gw_aven_07.jpg'
+                    }
+                    modelName={'name2'}
+                    modelPrice={69}
+                />
+                <ModelItem
+                    modelItemImg={
+                        'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/aventador/2021/09_21_restyle/gw_aven_07.jpg'
+                    }
+                    modelName={'name3'}
+                    modelPrice={69}
+                />
+                <ModelItem
+                    modelItemImg={
+                        'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/aventador/2021/09_21_restyle/gw_aven_07.jpg'
+                    }
+                    modelName={'name4'}
+                    modelPrice={69}
+                />
+            </div>
         </div>
     );
 }
