@@ -4,6 +4,29 @@ import styles from './Model.module.scss';
 
 const cx = classNames.bind(styles);
 
+const modelItems = [
+    {
+        img: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/aventador/2021/09_21_restyle/gw_aven_07.jpg',
+        name: 'name1',
+        price: 1,
+    },
+    {
+        img: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/aventador/2021/gate_aven_01.jpg',
+        name: 'name2',
+        price: 12,
+    },
+    {
+        img: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/gallery/gate_hura_02.jpg',
+        name: 'name3',
+        price: 13,
+    },
+    {
+        img: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/gallery/gate_hura_05.jpg',
+        name: 'name4',
+        price: 14,
+    },
+];
+
 function Model() {
     return (
         <div className={cx('wrapper')}>
@@ -34,34 +57,9 @@ function Model() {
                 </div>
             </div>
             <div className={cx('models')}>
-                <ModelItem
-                    modelItemImg={
-                        'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/aventador/2021/09_21_restyle/gw_aven_07.jpg'
-                    }
-                    modelName={'name1'}
-                    modelPrice={69}
-                />
-                <ModelItem
-                    modelItemImg={
-                        'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/aventador/2021/09_21_restyle/gw_aven_07.jpg'
-                    }
-                    modelName={'name2'}
-                    modelPrice={69}
-                />
-                <ModelItem
-                    modelItemImg={
-                        'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/aventador/2021/09_21_restyle/gw_aven_07.jpg'
-                    }
-                    modelName={'name3'}
-                    modelPrice={69}
-                />
-                <ModelItem
-                    modelItemImg={
-                        'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/aventador/2021/09_21_restyle/gw_aven_07.jpg'
-                    }
-                    modelName={'name4'}
-                    modelPrice={69}
-                />
+                {modelItems.map((item, index) => (
+                    <ModelItem key={index} modelItemImg={item.img} modelName={item.name} modelPrice={item.price} />
+                ))}
             </div>
         </div>
     );

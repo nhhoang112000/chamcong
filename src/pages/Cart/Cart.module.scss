@@ -1,0 +1,50 @@
+.wrapper {
+    font-size: 18px;
+}
+//filter
+
+.filter {
+    height: 100px;
+    background-color: #f8f8f7;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .btn-cart {
+        display: flex;
+    }
+
+    .btn {
+        font-weight: 600;
+        width: 120px;
+        height: 40px;
+        position: relative;
+        margin-left: 20px;
+        right: 20px;
+        border-radius: 3px;
+        background-color: #e5e5e5;
+        border: 1px solid #dad5d5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+            background-color: #dad5d5;
+        }
+    }
+
+    .filter-input {
+        padding-left: 10px;
+        width: 250px;
+        height: 30px;
+        border-radius: 3px;
+        border: 1px solid black;
+        position: relative;
+        left: 20px;
+    }
+}
+
+.table {
+    height: calc(100vh - 196px);
+    width: 100%;
+}

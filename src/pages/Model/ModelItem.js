@@ -5,12 +5,12 @@ const cx = classNames.bind(styles);
 
 function ModelItem({ modelItemImg, modelName, modelPrice }) {
     return (
-        <div>
-            <img src={modelItemImg} alt="" />
-            <label>{modelName}</label>
-            <div>
-                <label>{modelPrice}</label>
-                <button>Add to cart</button>
+        <div className={cx('item')}>
+            <img className={cx('item-img')} src={modelItemImg} alt={modelName} />
+            <label className={cx('item-name')}>{modelName}</label>
+            <div className={cx('item-bottom')}>
+                <label className={cx('item-price')}>{modelPrice} $</label>
+                <button className={cx('add-btn')}>Add to cart</button>
             </div>
         </div>
     );
