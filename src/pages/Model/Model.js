@@ -27,7 +27,7 @@ const modelItems = [
     },
 ];
 
-function Model() {
+function Model({ onClick }) {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('filter')}>
@@ -58,7 +58,13 @@ function Model() {
             </div>
             <div className={cx('models')}>
                 {modelItems.map((item, index) => (
-                    <ModelItem key={index} modelItemImg={item.img} modelName={item.name} modelPrice={item.price} />
+                    <ModelItem
+                        onClick={onClick}
+                        key={index}
+                        modelItemImg={item.img}
+                        modelName={item.name}
+                        modelPrice={item.price}
+                    />
                 ))}
             </div>
         </div>

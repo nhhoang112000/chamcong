@@ -4,6 +4,9 @@ import DefaultLayout from '~/layouts';
 import { Fragment } from 'react';
 
 function App() {
+    const checking = () => {
+        alert('hello');
+    };
     return (
         <Router>
             <div className="App">
@@ -23,7 +26,7 @@ function App() {
                                 path={route.path}
                                 element={
                                     <Layout>
-                                        <Page />
+                                        <Page onClick={checking} />
                                     </Layout>
                                 }
                             />
