@@ -4,30 +4,30 @@ import styles from './Model.module.scss';
 
 const cx = classNames.bind(styles);
 
-const modelItems = [
-    {
-        img: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/aventador/2021/09_21_restyle/gw_aven_07.jpg',
-        name: 'name1',
-        price: 1,
-    },
-    {
-        img: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/aventador/2021/gate_aven_01.jpg',
-        name: 'name2',
-        price: 12,
-    },
-    {
-        img: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/gallery/gate_hura_02.jpg',
-        name: 'name3',
-        price: 13,
-    },
-    {
-        img: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/gallery/gate_hura_05.jpg',
-        name: 'name4',
-        price: 14,
-    },
-];
+// const modelItems = [
+//     {
+//         img: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/aventador/2021/09_21_restyle/gw_aven_07.jpg',
+//         name: 'name1',
+//         price: 1,
+//     },
+//     {
+//         img: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/aventador/2021/gate_aven_01.jpg',
+//         name: 'name2',
+//         price: 12,
+//     },
+//     {
+//         img: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/gallery/gate_hura_02.jpg',
+//         name: 'name3',
+//         price: 13,
+//     },
+//     {
+//         img: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/gallery/gate_hura_05.jpg',
+//         name: 'name4',
+//         price: 14,
+//     },
+// ];
 
-function Model({ onClick }) {
+function Model({ allProps, sendDataToParent }) {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('filter')}>
@@ -57,9 +57,9 @@ function Model({ onClick }) {
                 </div>
             </div>
             <div className={cx('models')}>
-                {modelItems.map((item, index) => (
+                {allProps[0].map((item, index) => (
                     <ModelItem
-                        onClick={onClick}
+                        sendDataToParent={sendDataToParent}
                         key={index}
                         modelItemImg={item.img}
                         modelName={item.name}
