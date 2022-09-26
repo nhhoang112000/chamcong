@@ -58,13 +58,7 @@ function Model({ allProps, sendDataToParent }) {
             </div>
             <div className={cx('models')}>
                 {allProps[0].map((item, index) => (
-                    <ModelItem
-                        sendDataToParent={sendDataToParent}
-                        key={index}
-                        modelItemImg={item.img}
-                        modelName={item.name}
-                        modelPrice={item.price}
-                    />
+                    <ModelItem sendDataToParent={sendDataToParent} key={index} cartItem={item} />
                 ))}
             </div>
         </div>

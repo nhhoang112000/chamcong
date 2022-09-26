@@ -1,5 +1,5 @@
-import { DataGrid, GridRowsProp, GridColDef, GridActionsCellItem } from '@mui/x-data-grid';
-import { useState, useCallback } from 'react';
+import { DataGrid, GridActionsCellItem } from '@mui/x-data-grid';
+import { useState, Fragment } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import classNames from 'classnames/bind';
@@ -7,27 +7,19 @@ import styles from './Cart.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Cart() {
+function Cart({ allProps, removeProduct }) {
     const [pageSize, setPageSize] = useState(5);
 
-    const rows = [
-        { id: 1, color: 'black', modelName: 'Jon', price: 35 },
-        { id: 2, color: 'red', modelName: 'Cersei', price: 42 },
-        { id: 3, color: 'yellow', modelName: 'Jaime', price: 45 },
-        { id: 4, color: 'white', modelName: 'Arya', price: 16 },
-        { id: 5, color: 'green', modelName: 'Daenerys', price: null },
-        { id: 6, color: 'blue', modelName: null, price: 150 },
-        { id: 7, color: 'orange', modelName: 'Ferrara', price: 44 },
-        { id: 8, color: 'grey', modelName: 'Rossini', price: 36 },
-        { id: 9, color: 'silver', modelName: 'Harvey', price: 65 },
-    ];
+    const rows = allProps[1];
+    // [{ id: 1, color: 'black', name: 'Jon', price: 35 },]
+
     const columns = [
         {
             field: 'id',
             headerName: 'ID',
             width: 120,
         },
-        { field: 'modelName', headerName: 'Model name', width: 250 },
+        { field: 'name', headerName: 'Model name', width: 250 },
         { field: 'color', headerName: 'Color', width: 250 },
         {
             field: 'price',
@@ -41,12 +33,12 @@ function Cart() {
             description: 'This column has a value getter and is not sortable.',
             sortable: false,
             width: 160,
-            valueGetter: (params) => `${params.row.modelName || ''} ${params.row.color || ''}`,
+            valueGetter: (params) => `${params.row.name || ''} ${params.row.color || ''}`,
         },
         {
             field: 'time',
             headerName: 'Time',
-            type: 'datetime',
+            type: 'string',
             width: 300,
             valueGetter: () => `${Date().toLocaleString()}`,
         },
@@ -58,9 +50,14 @@ function Cart() {
         {
             field: 'delete',
             type: 'actions',
-            getActions: (params) => [<GridActionsCellItem icon={<DeleteIcon />} label="Delete" />],
+            getActions: (params) => [
+                <GridActionsCellItem
+                    onClick={() => removeProduct(params.row.id)}
+                    icon={<DeleteIcon />}
+                    label="Delete"
+                />,
+            ],
         },
-
     ];
 
     // const deleteUser = useCallback(
@@ -82,7 +79,9 @@ function Cart() {
                 </div>
                 <div className={cx('btn-cart')}>
                     <button className={cx('btn')}>Pay</button>
-                    <button className={cx('btn')}>Delete</button>
+                    <button className={cx('btn')} onClick={() => removeProduct(1)}>
+                        Delete
+                    </button>
                 </div>
             </div>
             <div className={cx('table')}>
